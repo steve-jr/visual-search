@@ -87,6 +87,7 @@ def search():
         
         # Format results
         formatted_results = []
+        
         for match in results:
             formatted_results.append({
                 'id': match['id'],
