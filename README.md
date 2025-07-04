@@ -8,7 +8,7 @@ AI-powered visual search for animal faces using the AFHQ dataset.
 - Category filtering
 - Drag-and-drop image upload
 - Real-time similarity scoring
-- Multi-project Pinecone support
+- Support multi-project on Pinecone free plan
 
 ## Local Development
 
@@ -22,7 +22,6 @@ pip install -r requirements.txt
 
 # Set environment variables
 cp .env.example .env
-# Edit .env with your API key
 
 # Run the app
 python app.py
