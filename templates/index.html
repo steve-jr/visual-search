@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Visual Search - Find Similar Animal Faces</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🐾 Visual Search</h1>
+            <p>Find similar animal faces using AI-powered visual search</p>
+        </header>
+        
+        <main class="main-card">
+            <section class="upload-section">
+                <div class="category-selector">
+                    <button class="category-btn active" data-category="all">All Animals</button>
+                    <button class="category-btn" data-category="cat">🐱 Cats</button>
+                    <button class="category-btn" data-category="dog">🐶 Dogs</button>
+                    <button class="category-btn" data-category="wild">🦁 Wild</button>
+                </div>
+                
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📸</div>
+                    <p>Drop an image here or click to upload</p>
+                    <p class="upload-hint">JPG, PNG • Max 10MB</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                
+                <div id="preview" class="preview hidden">
+                    <img id="previewImage" alt="Preview">
+                </div>
+                
+                <button id="searchBtn" class="search-btn hidden">
+                    Search
+                </button>
+            </section>
+            
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching through animal faces...</p>
+            </div>
+            
+            <section id="resultsSection" class="results-section hidden">
+                <div class="results-header">
+                    <h2>Similar Animal Faces</h2>
+                    <p id="resultCount"></p>
+                </div>
+                <div id="resultsGrid" class="results-grid"></div>
+            </section>
+        </main>
+        
+        <div id="stats" class="stats">
+            Loading stats...
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
