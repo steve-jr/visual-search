@@ -11,8 +11,8 @@
 Flask
 flask-cors
 gunicorn
-torch
-torchvision
+# torch==2.7.1+cpu
+# torchvision
 # numpy
 Pillow
 pinecone

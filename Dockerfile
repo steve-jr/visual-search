@@ -6,6 +6,8 @@ FROM python:${PYTHON_VERSION}-slim-bookworm
 
 WORKDIR /app
 
+RUN pip install --no-cache-dir torch==2.7.1+cpu torchvision==0.22.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
 # Pre-copy only requirements first to leverage Docker cache
 COPY requirements.txt .
 
