@@ -1,6 +1,5 @@
 // Configuration
 const API_BASE = '/api';
-// const API_BASE = 'https://visual-search-ot8r.onrender.com/api';
 let selectedCategory = 'all';
 let selectedImage = null;
 

@@ -40,6 +40,7 @@ class FeatureExtractor:
         """Extract features from PIL Image"""
         try:
             # Transform image
+            logger.info("Transforming image...")
             image_tensor = self.transform(image).unsqueeze(0).to(self.device)
             
             # Extract features
@@ -49,6 +50,7 @@ class FeatureExtractor:
                 features = features.cpu().numpy().flatten()
             
             # Normalize
+            logger.info("Normalizing vector...")
             norm = np.linalg.norm(features)
             if norm > 0:
                 features = features / norm
