@@ -2,7 +2,7 @@
 
 ARG PYTHON_VERSION=3.9.23
 
-FROM python:${PYTHON_VERSION}-alpine
+FROM python:${PYTHON_VERSION}-slim-bookworm
 
 WORKDIR /app
 
