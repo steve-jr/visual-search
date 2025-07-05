@@ -16,4 +16,4 @@ gunicorn
 # numpy
 # Pillow
 # pinecone
-python-dotenv
+# python-dotenv
