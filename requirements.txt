@@ -11,9 +11,9 @@
 Flask
 flask-cors
 gunicorn
-torch
-torchvision
-numpy
-Pillow
-pinecone
+# torch
+# torchvision
+# numpy
+# Pillow
+# pinecone
 python-dotenv
