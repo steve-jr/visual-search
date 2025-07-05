@@ -120,20 +120,6 @@ def stats():
         logger.error(f"Stats error: {str(e)}")
         return jsonify({'error': 'Failed to get stats'}), 500
 
-@app.route('/api/keep-alive')
-def keep_alive():
-    """Keep Pinecone index active"""
-    try:
-        stats = pinecone_client.keep_alive()
-        return jsonify({
-            'status': 'alive',
-            'stats': stats,
-            'timestamp': datetime.now().isoformat()
-        })
-    except Exception as e:
-        logger.error(f"Keep-alive error: {str(e)}")
-        return jsonify({'error': str(e)}), 500
-
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({'error': 'Not found'}), 404
