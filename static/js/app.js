@@ -119,6 +119,11 @@ async function performSearch() {
         loading.classList.add('hidden');
         searchBtn.disabled = false;
     }
+
+    gtag('event', 'search_start', {
+        'event_category': 'image_search',
+        'event_label': 'user_started_image_search',
+    });
 }
 
 function displayResults(results) {

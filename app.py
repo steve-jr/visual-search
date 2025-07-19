@@ -89,13 +89,14 @@ def search():
         formatted_results = []
         
         for match in results:
-            formatted_results.append({
-                'id': match['id'],
-                'score': float(match['score']),
-                'category': match['metadata'].get('category', 'unknown'),
-                'filename': match['metadata'].get('filename', 'unknown'),
-                'image_url': match['metadata'].get('image_url', 'unknown')
-            })
+            if match['score'] > 0.75:    # Only include matches with score > 0.75
+                formatted_results.append({
+                    'id': match['id'],
+                    'score': float(match['score']),
+                    'category': match['metadata'].get('category', 'unknown'),
+                    'filename': match['metadata'].get('filename', 'unknown'),
+                    'image_url': match['metadata'].get('image_url', 'unknown')
+                })
         
         return jsonify({
             'status': 'success',
